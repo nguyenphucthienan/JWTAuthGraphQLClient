@@ -1,9 +1,15 @@
 import React, { Component } from 'react';
 
+import LoginForm from './LoginForm';
+
 class App extends Component {
   render() {
     return (
-      <div>Hi there!</div>
+      <div className="flex-wrapper">
+        <main>
+          <LoginForm />
+        </main>
+      </div>
     );
   }
 }
