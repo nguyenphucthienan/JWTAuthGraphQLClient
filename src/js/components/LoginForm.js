@@ -31,7 +31,7 @@ class LoginForm extends Component {
         <form className="col m6 offset-m3 s8 offset-s2" onSubmit={this.onSubmit}>
           <div className="input-field">
             <input
-              placeholder="Email"
+              placeholder="Username"
               value={this.state.username}
               onChange={event => this.setState({ username: event.target.value })}
             />
