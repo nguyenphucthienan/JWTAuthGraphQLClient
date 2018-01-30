@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { graphql } from 'react-apollo';
+import { graphql, compose } from 'react-apollo';
 import CurrentUser from '../queries/CurrentUser';
+import GetUsers from '../queries/GetUsers';
 import Logout from '../mutation/Logout';
 
 class Header extends Component {
@@ -14,12 +15,15 @@ class Header extends Component {
     await localStorage.removeItem('token');
 
     this.props.mutate({
-      refetchQueries: [{ query: CurrentUser }]
+      refetchQueries: [
+        { query: CurrentUser },
+        { query: GetUsers }
+      ]
     });
   }
 
   renderButtons() {
-    const { user, loading } = this.props.data;
+    const { loading, user } = this.props.data;
 
     if (loading) {
       return <div />;
@@ -66,4 +70,7 @@ class Header extends Component {
   }
 }
 
-export default graphql(CurrentUser)(graphql(Logout)(Header));
+export default compose(
+  graphql(CurrentUser),
+  graphql(Logout)
+)(Header);
