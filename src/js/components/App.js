@@ -5,6 +5,7 @@ import Header from './Header';
 import Footer from './Footer';
 import Landing from './Landing';
 import LoginForm from './LoginForm';
+import RegisterForm from './RegisterForm';
 
 class App extends Component {
   render() {
@@ -16,6 +17,7 @@ class App extends Component {
             <Switch>
               <Route exact path="/" component={Landing} />
               <Route exact path="/login" component={LoginForm} />
+              <Route exact path="/register" component={RegisterForm} />
             </Switch>
           </main>
           <Footer />
