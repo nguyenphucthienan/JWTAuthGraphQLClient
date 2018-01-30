@@ -15,3 +15,8 @@ main {
 .pointer-cursor {
   cursor: pointer;
 }
+
+.errors {
+  color: red;
+  margin-bottom: 15px;
+}
