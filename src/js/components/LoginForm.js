@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
-import { graphql } from 'react-apollo';
+import { graphql, compose } from 'react-apollo';
 import CurrentUser from '../queries/CurrentUser';
 import Login from '../mutation/Login';
 
@@ -63,11 +63,14 @@ class LoginForm extends Component {
               ))
             }
           </div>
-          <button className="btn red darken-2">Login</button>
+          <button className="btn red darken-1">Login</button>
         </form>
       </div>
     );
   }
 }
 
-export default withRouter(graphql(CurrentUser)(graphql(Login)(LoginForm)));
+export default withRouter(compose(
+  graphql(CurrentUser),
+  graphql(Login)
+)(LoginForm));
