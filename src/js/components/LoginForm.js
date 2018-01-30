@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import { graphql } from 'react-apollo';
+import CurrentUser from '../queries/CurrentUser';
 import Login from '../mutation/Login';
 
 class LoginForm extends Component {
@@ -9,15 +11,24 @@ class LoginForm extends Component {
     this.onSubmit = this.onSubmit.bind(this);
   }
 
+  componentWillUpdate(nextProps) {
+    if (nextProps.data.user) {
+      this.props.history.push('/');
+    }
+  }
+
   onSubmit(event) {
     event.preventDefault();
     const { username, password } = this.state;
 
     this.props.mutate({
-      variables: { username, password },
+      variables: { username, password }
     })
       .then(({ data }) => {
-        console.log(data);
+        const { token } = data.login;
+        localStorage.setItem('token', token);
+
+        this.props.data.refetch();
       })
       .catch((res) => {
         const errors = res.graphQLErrors.map(error => error.message);
@@ -59,4 +70,4 @@ class LoginForm extends Component {
   }
 }
 
-export default graphql(Login)(LoginForm);
+export default withRouter(graphql(CurrentUser)(graphql(Login)(LoginForm)));
