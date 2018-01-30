@@ -27,7 +27,11 @@ class Header extends Component {
 
     if (user) {
       return (
-        <li><a onClick={this.onLogout}>Logout</a></li>
+        <div>
+          <li><Link to="/dashboard">Dashboard</Link></li>
+          <li><Link to="/users">Users</Link></li>
+          <li><a onClick={this.onLogout}>Logout</a></li>
+        </div>
       );
     }
 

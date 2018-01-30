@@ -5,7 +5,7 @@ class Dashboard extends Component {
     return (
       <div className="row center-align">
         <h5>Dashboard</h5>
-        <ul className="col l6 offset-l3 m8 offset-m2 s10 offset-s1 collection with-header">
+        <ul className="col l4 offset-l4 m8 offset-m2 s10 offset-s1 collection with-header z-depth-1">
           <li className="collection-header"><h5 className="flow-text">Technology Stack</h5></li>
           <li className="collection-item"><div>Express<a href="https://expressjs.com/" target="_blank" className="secondary-content"><i className="material-icons blue-text text-darken-1">send</i></a></div></li>
           <li className="collection-item"><div>MongoDB<a href="https://www.mongodb.com/" target="_blank" className="secondary-content"><i className="material-icons blue-text text-darken-1">send</i></a></div></li>

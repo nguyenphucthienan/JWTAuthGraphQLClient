@@ -8,6 +8,7 @@ import Landing from './Landing';
 import LoginForm from './LoginForm';
 import RegisterForm from './RegisterForm';
 import Dashboard from './Dashboard';
+import UserList from './UserList';
 
 class App extends Component {
   render() {
@@ -21,6 +22,7 @@ class App extends Component {
               <Route exact path="/login" component={LoginForm} />
               <Route exact path="/register" component={RegisterForm} />
               <Route exact path="/dashboard" component={requireAuth(Dashboard)} />
+              <Route exact path="/users" component={requireAuth(UserList)} />
             </Switch>
           </main>
           <Footer />
