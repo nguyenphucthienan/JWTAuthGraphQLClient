@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-const DEFAULT_AVATAR_URL = 'https://pbs.twimg.com/profile_images/745058247757824000/IAZSRYGZ.jpg';
+const DEFAULT_AVATAR_URL = 'https://i.imgur.com/bkP3uwj.jpg';
 
 class UserCard extends Component {
   render() {

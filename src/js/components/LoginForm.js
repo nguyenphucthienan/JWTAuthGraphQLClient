@@ -40,7 +40,7 @@ class LoginForm extends Component {
     return (
       <div className="row center-align">
         <h5>Login</h5>
-        <form className="col l4 offset-l4 m8 offset-m2 s10 offset-s1" onSubmit={this.onSubmit}>
+        <form className="col l4 offset-l4 m6 offset-m3 s10 offset-s1" onSubmit={this.onSubmit}>
           <div className="input-field">
             <input
               placeholder="Username"

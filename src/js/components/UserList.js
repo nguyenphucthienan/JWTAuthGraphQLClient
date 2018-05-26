@@ -25,7 +25,7 @@ class UserList extends Component {
     return (
       <div className="row center-align">
         <h5>Users</h5>
-        <div className="col l4 offset-l4 m8 offset-m2 s10 offset-s1">
+        <div className="col l4 offset-l4 m6 offset-m3 s10 offset-s1">
           {this.renderUsers()}
         </div>
       </div>
